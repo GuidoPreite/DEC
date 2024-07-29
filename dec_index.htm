@@ -1,0 +1,102 @@
+﻿﻿<html>
+<head>
+    <link href="css/dec_requirements.css" rel="stylesheet">
+    <link href="css/dec_custom.css" rel="stylesheet">
+    <script src="js/dec_requirements.js"></script>
+    <script src="js/dec_custom.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+      
+        <h3>Dataverse Email Checker <span id="span_drbversion">1.0.0.0</span> <span id="span_context"><small>(Demo)</small></span></h3>
+        Created by Guido Preite - <a target="_blank" href="https://www.x.com/crmanswers">X</a> - <a target="_blank" href="https://www.linkedin.com/in/guidopreite/">LinkedIn</a> - <a target="_blank" href="https://github.com/GuidoPreite">GitHub</a> - <a target="_blank" href="https://www.crmanswers.net">Blog</a>
+
+        <hr />
+        <table class="table customTable">
+            <tbody>
+                <tr>
+                    <td class="top-middle w-25"><b>Emails to clean</b></td>
+                    <td class="align-middle w-75">
+                        <textarea class="form-control form-control-sm" id="txtEmailsToClean" rows="1"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top-middle w-25"></td>
+                    <td class="align-middle w-75"><button id="btnCleanEmails" type="button" class="btn btn-sm btn-primary" onclick="javascript:DEC.Core.CleanEmails();">Clean</button></td>
+                </tr>
+                <tr>
+                    <td class="align-middle w-25"><b>Cleaned Emails</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selCleanedEmails');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75">
+                        <select class="form-select form-select-sm" id="selCleanedEmails" disabled>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top-middle w-25"></td>
+                    <td class="align-middle w-75">
+                        <button type="button" id="btnLoadUsers" class="btn btn-sm btn-primary" onclick="javascript: DEC.Core.LoadUsers(true, true);" disabled>Load Users</button>
+                        <button type="button" id="btnLoadUsersOnlyDataverse" class="btn btn-sm btn-primary" onclick="javascript: DEC.Core.LoadUsers(true, false);" disabled>Load Only Dataverse Users</button>
+                        <button type="button" id="btnLoadUsersOnlyEntra" class="btn btn-sm btn-primary" onclick="javascript: DEC.Core.LoadUsers(false, true);" disabled>Load Only Entra Users</button>
+                        <br />
+                        <span id="spnResults"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-middle w-25"><b>Dataverse Users</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selDataverseUsers');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75">
+                        <select class="form-select form-select-sm" id="selDataverseUsers" disabled>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align-middle w-25"><b>Entra Users</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selEntraUsers');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75">
+                        <select class="form-select form-select-sm" id="selEntraUsers" disabled>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top-middle w-25"></td>
+                    <td class="align-middle w-75">
+                        <button type="button" id="btnCheckEmails" class="btn btn-sm btn-primary" onclick="javascript:DEC.Core.CheckEmails();" disabled>Check Email Addresses</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-middle w-25"><b>Enabled Dataverse Users</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selDataverseUsersEnabled');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75"><select class="form-select form-select-sm" id="selDataverseUsersEnabled" disabled></select></td>
+                </tr>
+                <tr>
+                    <td class="align-middle w-25"><b>Disabled Dataverse Users</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selDataverseUsersDisabled');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75"><select class="form-select form-select-sm" id="selDataverseUsersDisabled" disabled></select></td>
+                </tr>
+
+                <tr>
+                    <td class="align-middle w-25"><b>Enabled Entra Users</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selEntraUsersEnabled');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75"><select class="form-select form-select-sm" id="selEntraUsersEnabled" disabled></select></td>
+                </tr>
+                <tr>
+                    <td class="align-middle w-25"><b>Disabled Entra Users</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selEntraUsersDisabled');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75"><select class="form-select form-select-sm" id="selEntraUsersDisabled" disabled></select></td>
+                </tr>
+
+                <tr>
+                    <td class="align-middle w-25"><b>Enabled Entra Users not inside Dataverse</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selEntraUsersEnabledNoDataverse');"><span class="download">&#x1f4e9;</span></button> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selEntraUsersEnabledNoDataverse', true);"><span class="download">&#x1f4e5;</span></button></td>
+                    <td class="align-middle w-75"><select class="form-select form-select-sm" id="selEntraUsersEnabledNoDataverse" disabled></select></td>
+                </tr>
+
+                <tr>
+                    <td class="align-middle w-25"><b>Disabled Entra Users not inside Dataverse</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selEntraUsersDisabledNoDataverse');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75"><select class="form-select form-select-sm" id="selEntraUsersDisabledNoDataverse" disabled></select></td>
+                </tr>
+
+                <tr>
+                    <td class="align-middle w-25"><b>Emails not found inside Entra</b> <button type="button" class="btn btn-sm" onclick="javacript:DEC.Core.DownloadContent('selMissingEmails');"><span class="download">&#x1f4e9;</span></button></td>
+                    <td class="align-middle w-75"><select class="form-select form-select-sm" id="selMissingEmails" disabled></select></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
