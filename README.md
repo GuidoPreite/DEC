@@ -1,4 +1,4 @@
-# Dataverse REST Builder
+# Dataverse Email Checker
 Dataverse Email Checker (DEC) is an application to compare a list of email addresses against Dataverse and Entra users.
 
 The tool shows if the email address belongs to a Dataverse user (Enabled or Disabled), to an Entra user (Enabled or Disabled), to an Entra User not inside Dataverse (Enabled or Disabled) and if there are email addresses not found inside Entra.
