@@ -129,7 +129,7 @@ DEC.Core.CleanEmails = function () {
 
     setTimeout(() => {
         let content = $('#' + sourceTextAreaId).val();
-        let firstSplit = DEC.Utilities.SplitText(content, [',', ' ', ';', '\t', '\n', '\r\n']);
+        let firstSplit = DEC.Utilities.SplitText(content, [',', ' ', ';', '\t', '\n', '\r\n', '\'', '"']);
         let hash = new Set();
         firstSplit.forEach(function (item) { if (item.includes('@')) { hash.add(item.trim().toLowerCase()); } });
         let arrSet = Array.from(hash);
